@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MEDIBOT — Login</title>
+  <link rel="manifest" href="/ui/manifest.json" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="login-page">
+
+  <div class="login-wrapper">
+    <div class="login-card">
+
+      <div class="login-logo">
+        <div class="logo-icon">&#9877;</div>
+        <h1>MEDIBOT</h1>
+        <p>Hospital Logistics System</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div class="password-wrap">
+            <input type="password" id="password" placeholder="Enter your password" required />
+            <span class="eye-toggle" onclick="togglePassword()">&#128065;</span>
+          </div>
+        </div>
+        <div id="loginError" class="error-msg hidden"></div>
+        <button type="submit" class="btn-primary" id="loginBtn">
+          <span id="loginBtnText">Sign In</span>
+          <span id="loginSpinner" class="spinner hidden"></span>
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <p>MEDIBOT &copy; 2025 &mdash; CHARUSAT SEM 5</p>
+      </div>
+
+    </div>
+
+    <div class="login-info">
+      <h2>Hospital Logistics Automation</h2>
+      <p>5-Floor &bull; 50-Bed &bull; Role-Based Access</p>
+      <div class="role-badges">
+        <span class="badge admin">Admin Staff</span>
+        <span class="badge doctor">Doctor</span>
+        <span class="badge staff">Staff</span>
+        <span class="badge chemist">Chemist</span>
+        <span class="badge user">Patient</span>
+      </div>
+      <div class="demo-creds">
+        <h4>Demo Credentials</h4>
+        <div class="cred-row" onclick="fillCred('admin@medibot.com','admin123')">
+          <span class="cred-role admin">Admin</span>
+          <span>admin@medibot.com / admin123</span>
+        </div>
+        <div class="cred-row" onclick="fillCred('doctor@medibot.com','doctor123')">
+          <span class="cred-role doctor">Doctor</span>
+          <span>doctor@medibot.com / doctor123</span>
+        </div>
+        <div class="cred-row" onclick="fillCred('staff@medibot.com','staff123')">
+          <span class="cred-role staff">Staff</span>
+          <span>staff@medibot.com / staff123</span>
+        </div>
+        <div class="cred-row" onclick="fillCred('chemist@medibot.com','chemist123')">
+          <span class="cred-role chemist">Chemist</span>
+          <span>chemist@medibot.com / chemist123</span>
+        </div>
+        <div class="cred-row" onclick="fillCred('patient@medibot.com','patient123')">
+          <span class="cred-role user">Patient</span>
+          <span>patient@medibot.com / patient123</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    function fillCred(email, pass) {
+      document.getElementById('email').value = email;
+      document.getElementById('password').value = pass;
+    }
+    function togglePassword() {
+      const p = document.getElementById('password');
+      p.type = p.type === 'password' ? 'text' : 'password';
+    }
+  </script>
+</body>
+</html>

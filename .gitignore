@@ -1,0 +1,29 @@
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv/
+
+# Environment Secrets
+.env
+controllers/.env
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# OS/System files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
